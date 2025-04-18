@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Product Launch Countdown</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="icon.png">
+
+</head>
+
+<body>
+
+
+    <div class="top">
+        <img src="logo.png" alt="">
+        <h1>DRAGON WATCH LAUNCH COUNTDOWN</h1>
+    </div>
+
+
+    <section class="main">
+        <div class="main-div">
+
+            <div class="countdown-container">
+                <div class="time-box">
+                    <div id="days">00</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="time-box">
+                    <div id="hours">00</div>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="time-box">
+                    <div id="minutes">00</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="time-box">
+                    <div id="seconds">00</div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="about-watch">
+        <h2>eLPi Dragon Watch – Unleash the Dragon!</h2>
+        <div class="about-main">
+            <ul>
+                <li>
+                    <strong>Glowing Elegance:</strong> Emits a soft glow in the dark, making a bold statement even at
+                    night.
+                </li>
+                <!-- <li>
+                    <strong>Dragon Skin Feel:</strong> The belt is designed to mimic the texture of dragon scales,
+                    offering a unique and premium touch.
+                </li> -->
+                <!-- <li>
+                    <strong>Shimmering Brilliance:</strong> The watch head shines under light, resembling the piercing
+                    eye of a dragon.
+                </li> -->
+                <li>
+                    <strong> Striking Colors:</strong> Available in Green, Blue, Red, and Black, each embodying the
+                    spirit of a legendary dragon.
+                </li>
+                <li>
+                    <strong>Smart & Rechargeable:</strong> A cutting-edge electronic timepiece with a rechargeable
+                    battery for modern convenience.
+                </li>
+                <li>
+                    <strong>Built for Adventure:</strong> Fully waterproof, designed to withstand the elements.
+                </li>
+                <!-- <li>
+                    <strong>Smartwatch Edition:</strong> Also available in a smartwatch variant, blending dragon
+                    aesthetics with advanced technology.
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="follow-us">
+        <h2>Follow US</h2>
+        <div class="follow">
+            <!-- <a aria-label="youtube" href="https://youtube.com">
+                <i class="fa-brands fa-youtube"></i>
+            </a> -->
+            
+            <a aria-label="tiktok" href="https://tiktok.com">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            
+            <a aria-label="ig" href="https://instagram.com">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <!-- <a aria-label="facebook" href="https://facebook.com">
+                <i class="fa-brands fa-facebook"></i>
+            </a> -->
+            
+            <a aria-label="x" href="https://x.com">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Firebase Script -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAQpA-x_9aFoXALnbqbUQDIarimR9lIZlw",
+            authDomain: "amalitechprojects.firebaseapp.com",
+            projectId: "amalitechprojects",
+            storageBucket: "amalitechprojects.firebasestorage.app",
+            messagingSenderId: "693397605574",
+            appId: "1:693397605574:web:6a6f3cf27c302d74431bc7",
+            measurementId: "G-38EK63QGXQ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+
+    <script>
+        function startCountdown(targetDate) {
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = targetDate - now;
+
+                if (timeLeft <= 0) {
+                    document.querySelector(".countdown-container").innerHTML = "<h2>🎉 Launched! 🎉</h2>";
+                    clearInterval(countdownInterval);
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = days.toString().padStart(2, "0");
+                document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+            }
+
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        const launchDate = new Date("2025-06-09T00:06:00").getTime(); // Set your launch date here
+        startCountdown(launchDate);
+    </script>
+
+</body>
+
+</html>

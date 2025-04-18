@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("watch14.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: Arial Black;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #000;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 30px;
+  align-items: center;
+}
+
+.top img {
+  height: 70px;
+}
+
+@media (max-width: 970px) {
+  .top img {
+    height: 100px;
+  }
+
+  .top {
+    text-align: center;
+  }
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 5%;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.main-div {
+  padding: 30px;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border: 1.8px solid #aaa; */
+  box-shadow: 0 0 10px rgba(198, 198, 198, 0.454);
+  border-radius: 30px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 2rem;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: transparent;
+  border: 1.8px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.103);
+  min-width: 80px;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.about-watch {
+  padding: 20px 5%;
+  font-size: 20px;
+}
+
+.about-watch h2 {
+  font-size: 30px;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.about-main {
+  border-top: 1.8px solid #aaa;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.follow-us {
+  margin-top: 40px;
+  padding: 0 5% 50px 5%;
+  text-align: center;
+}
+
+.follow-us h2 {
+  font-size: 30px;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.follow {
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* padding: 15px 0; */
+}
+
+.follow a {
+  text-decoration: none;
+  color: white;
+}
+
+.follow i {
+  font-size: 25px;
+  padding: 20px;
+  /* box-shadow: 0 0 5px #aaaaaa1f; */
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.follow i:hover {
+  transform: scale(1.07);
+  color: aqua;
+  box-shadow: 0 0 5px #009dff9b;
+}
